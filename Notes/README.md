@@ -10,6 +10,8 @@ You provide the v-directiveName after the opening tag element.
 
 Vue [comes with a number of these built in options](https://vuejs.org/api/built-in-directives.html)
 
+Some directive will even allow you to use JavaScript methods on them.
+
 ### v-if vs. v-show
 
 If will completely remove the element and only display it when the case is supported.
