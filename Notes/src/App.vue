@@ -91,6 +91,8 @@ h1 {
   border: none;
   padding: 10px;
   width: 50px;
+
+  
   height: 50px;
   cursor: pointer;
   background-color: rgb(21, 20, 20);
