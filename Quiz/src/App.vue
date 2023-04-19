@@ -1,13 +1,13 @@
-<script>
+<script setup>
 import q from "../data/quiz.json";
-import {ref, watchEffect } from "vue";
+import {ref, watch } from "vue";
 
 const quizzes = ref(q)
-console.log('first quiz', quizzes.value)
 
-watchEffect(() => {
-  quizzes.value = q
-  console.log("watch effect see q", quizzes.value)
+const search = ref("")
+
+watch(search, () => {
+  quizzes.value = q.filter(quiz =>  quiz.name.toLowerCase().includes(search.value.toLowerCase()))
 })
 
 </script>
@@ -17,19 +17,25 @@ watchEffect(() => {
     <header>
       <h1>Quiz</h1>
       <input 
+        v-model.trim="search"
         type="text"
         placeholder="Search...">
     </header>
-  <div class="options-cards">
-    {{ quizzes }}
-    <div v-for="quiz in quizzes" :key="quiz.id" class="card">
-      <img :src="quiz.img" :alt="quiz.name">
-      <div class="card-text">
-        <h2>{{ quiz.name }}</h2>
-        <p>{{ quiz.questions.length }}  Questions </p>
+
+    <div class="options-cards">
+      <div 
+        v-for="quiz in quizzes" 
+        :key="quiz.id" 
+        class="card"
+        >
+        <img :src="quiz.img" :alt="quiz.name">
+        <div class="card-text">
+          <h2>{{ quiz.name }}</h2>
+          <p>{{ quiz.questions.length }}  Questions </p>
+        </div>
       </div>
     </div>
-  </div>
+
   </div>
 
 </template>
