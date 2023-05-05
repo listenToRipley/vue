@@ -1,6 +1,7 @@
 <script setup>
 import q from "../data/quiz.json";
 import {ref, watch } from "vue";
+import {RouterView} from "vue-router";
 
 import Card from "./components/Card.vue";
 
@@ -15,6 +16,11 @@ watch(search, () => {
 </script>
 
 <template>
+
+  <div>
+    <RouterView/>
+  </div>
+  
   <div class="container">
     <header>
       <h1>Quiz</h1>
