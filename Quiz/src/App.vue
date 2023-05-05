@@ -2,6 +2,7 @@
 import q from "../data/quiz.json";
 import {ref, watch } from "vue";
 import {RouterView} from "vue-router";
+import Nav from "./components/Nav.vue";
 
 import Card from "./components/Card.vue";
 
@@ -13,11 +14,16 @@ watch(search, () => {
   quizzes.value = q.filter(quiz =>  quiz.name.toLowerCase().includes(search.value.toLowerCase()))
 })
 
+const randomState = ref("");
+
 </script>
 
 <template>
 
   <div>
+    {{ randomState }}
+    <button @click="randomState = 'hello there'">Click Me</button>
+    <Nav/>
     <RouterView/>
   </div>
   
