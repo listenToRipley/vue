@@ -2,11 +2,11 @@
 import q from "../data/quiz.json";
 import {ref, watch } from "vue";
 
-import Card from "./compontents/Card.vue"
+import Card from "./components/Card.vue";
 
-const quizzes = ref(q)
+const quizzes = ref(q);
 
-const search = ref("")
+const search = ref("");
 
 watch(search, () => {
   quizzes.value = q.filter(quiz =>  quiz.name.toLowerCase().includes(search.value.toLowerCase()))
@@ -25,7 +25,12 @@ watch(search, () => {
     </header>
 
     <div class="options-cards">
-      <Card/>
+      <Card 
+        v-for="quiz in quizzes" 
+        :key="quiz.id" 
+        class="card"
+        :quiz="quiz"
+        />
     </div>
   </div>
 

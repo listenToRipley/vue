@@ -1,17 +1,15 @@
 <script setup>
 import q from "../../data/quiz.json";
-import {ref, watch } from "vue";
+import {ref, defineProps } from "vue";
 
 const quizzes = ref(q)
+const props = defineProps(['quiz']);
+// console.log(props);
 
 </script>
 
 <template>
-    <div 
-        v-for="quiz in quizzes" 
-        :key="quiz.id" 
-        class="card"
-        >
+    <div class="card">
         <img :src="quiz.img" :alt="quiz.name">
         <div class="card-text">
             <h2>{{ quiz.name }}</h2>
