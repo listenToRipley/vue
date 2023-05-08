@@ -1,7 +1,7 @@
 ///Define our routing rules
 import {createRouter, createWebHistory} from "vue-router";
-import QuizzesViews from "../views/QuizzesViews.vue"
-import Questions from "../components/Questions.vue";
+import QuizzesView from "../views/QuizzesView.vue";
+import QuizView from "../views/QuizView.vue";
 
 const routes = createRouter({
 
@@ -10,12 +10,12 @@ const routes = createRouter({
         {
             path: "/",
             name: "quizzes",
-            component: QuizzesViews
+            component: QuizzesView
         },
         {
-            path: "/:subject/:id",
-            name: "questions",
-            component: Questions
+            path: "/quiz/:id",
+            name: "quiz",
+            component: QuizView
         }
 
     ]//array of objects

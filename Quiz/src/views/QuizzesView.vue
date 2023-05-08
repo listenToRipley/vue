@@ -1,11 +1,11 @@
 <script setup>
 import q from "../../data/quiz.json";
 import {ref, watch } from "vue";
-import {RouterView} from "vue-router";
 
 import Card from "../components/Card.vue";
 
 const quizzes = ref(q);
+// console.log(quizzes.value);
 
 const search = ref("");
 
