@@ -2,7 +2,6 @@
 import q from "../data/quiz.json";
 import {ref, watch } from "vue";
 import {RouterView} from "vue-router";
-import Nav from "./components/Nav.vue";
 
 import Card from "./components/Card.vue";
 
@@ -19,7 +18,6 @@ watch(search, () => {
 <template>
 
   <div>
-    <Nav/>
     <RouterView/>
   </div>
   
