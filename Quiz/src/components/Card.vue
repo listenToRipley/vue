@@ -1,6 +1,7 @@
 <script setup>
 import q from "../../data/quiz.json";
 import {ref, defineProps } from "vue";
+import { RouterLink } from "vue-router";
 
 const quizzes = ref(q)
 const props = defineProps(['quiz']);
@@ -10,7 +11,9 @@ const props = defineProps(['quiz']);
 
 <template>
     <div class="card">
-        <img :src="quiz.img" :alt="quiz.name">
+        <RouterLink :to="`/${quiz.name}/${quiz.id}`">
+          <img :src="quiz.img" :alt="quiz.name"/>
+        </RouterLink>
         <div class="card-text">
             <h2>{{ quiz.name }}</h2>
             <p>{{ quiz.questions.length }}  Questions </p>

@@ -12,17 +12,13 @@ const search = ref("");
 
 watch(search, () => {
   quizzes.value = q.filter(quiz =>  quiz.name.toLowerCase().includes(search.value.toLowerCase()))
-})
-
-const randomState = ref("");
+});
 
 </script>
 
 <template>
 
   <div>
-    {{ randomState }}
-    <button @click="randomState = 'hello there'">Click Me</button>
     <Nav/>
     <RouterView/>
   </div>

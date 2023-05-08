@@ -10,7 +10,11 @@ Pass state from one element to another.
 
 ## Watch
 
+Provides a way to consistently check if input/state has changes and provide rendering accordingly.
+
 ## Emit
+
+Show backwards binding.
 
 ## Routes
 

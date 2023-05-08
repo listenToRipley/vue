@@ -6,15 +6,20 @@
 
 <template>
     <div>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink active-class="active" to="/">Home</RouterLink>
+        <RouterLink active-class="active" to="/about">About</RouterLink>
     </div>
 </template>
 
-<style>
+<style scoped>
 
 a {
     padding: 1em;
+}
+
+.active {
+    font-weight: 900;
+    color: goldenrod;
 }
 
 </style>
