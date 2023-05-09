@@ -1,8 +1,8 @@
 <script setup>
-import {useRoute, RouterView} from "vue-router";
+// import {useRoute, RouterView} from "vue-router";
 import quiz from "../../data/quiz.json"
 
-const route = useRoute();
+// const route = useRoute();
 
 const questions = quiz.find(sub => sub.id === parseInt(route.params.id)).questions
 
@@ -11,7 +11,7 @@ console.log(questions)
 
 <template>
 
-    <div>
+    <div class="questions-container">
         <div 
             class="question"
             >
@@ -36,6 +36,10 @@ console.log(questions)
 
 <style scoped>
 
+.questions-container {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
     .question {
         font-size: 30px;
         margin-bottom: 20px;

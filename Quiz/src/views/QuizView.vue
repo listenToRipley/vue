@@ -15,7 +15,7 @@ import Questions from '../components/Questions.vue';
         </div>
     </header>
 
-    <div class="questions-container">
+    <div>
         <Questions/>
     </div>
 
@@ -44,8 +44,4 @@ import Questions from '../components/Questions.vue';
         background-color: beige;
     }
 
-    .questions-container {
-        margin-top: 20px;
-        margin-left: 20px;
-    }
 </style>
