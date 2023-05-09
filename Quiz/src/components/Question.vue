@@ -1,4 +1,8 @@
 <script setup>
+import { defineProps } from 'vue';
+
+const {question} = defineProps(['question'])
+
 </script>
 
 <template>
@@ -8,17 +12,21 @@
             class="question"
             >
             <div>
-                placeholder question
+                {{ question.text }}
             </div>
         </div>
         
         <div 
             class="options-container"
         >
-            <div class="option">
-                <p class="option-label">A</p>
+            <div 
+                class="option"
+                v-for="option in question.options"
+                :key="option.id"
+            >
+                <p class="option-label">{{ option.label }}</p>
                 <div class="option-value">
-                    <p>Value</p>
+                    <p>{{ option.text }}</p>
                 </div>
             </div>
         </div>

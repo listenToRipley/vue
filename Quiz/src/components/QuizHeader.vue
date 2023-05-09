@@ -1,4 +1,8 @@
 <script setup>
+import { defineProps } from 'vue';
+
+const {status} = defineProps(['questionStatus']);
+
 </script>
 
 <template>
