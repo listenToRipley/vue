@@ -1,9 +1,4 @@
 <script setup>
-import quiz from "../../data/quiz.json"
-
-const questions = quiz.find(sub => sub.id === parseInt(route.params.id)).questions
-
-console.log(questions)
 </script>
 
 <template>

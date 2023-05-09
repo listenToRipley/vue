@@ -1,19 +1,15 @@
 <script setup>
 import Questions from '../components/Question.vue';
+import QuizHeader from '../components/QuizHeader.vue';
 
 // const quiz = quiz.find(sub => sub.id === parseInt(route.params.id)).questions
 
 </script>
 
 <template>
-    <header>
-        <h4>Question 1/3</h4>
-        <div class="bar">
-            <div class="completion">
-
-            </div>
-        </div>
-    </header>
+    <div>
+        <QuizHeader/>
+    </div>
 
     <div>
         <Questions/>
@@ -22,26 +18,4 @@ import Questions from '../components/Question.vue';
 </template>
 
 <style scoped>
-    header {
-        margin-top: 20px;
-        margin-left: 20px;
-    }
-
-
-    header h4 {
-        font-size: 40px;
-    }
-
-    .bar {
-        width: 300px;
-        height: 50px;
-        border: 3px solid beige;
-    }
-
-    .completion {
-        height: 100%;
-        width: 0%;
-        background-color: beige;
-    }
-
 </style>
