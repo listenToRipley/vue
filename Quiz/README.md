@@ -12,9 +12,11 @@ Pass state from one element to another.
 
 Provides a way to consistently check if input/state has changes and provide rendering accordingly.
 
+Watch takes in two params. The first is a function the returns the value that you want to "listen to", so is if it changes and the second is a call back handler that we will use when the value of the element we want to change.
+
 ## Emit
 
-Show backwards binding.
+Show backwards binding, from child to parent. A way to track state and provide information between elements.
 
 ## Routes
 
@@ -29,6 +31,8 @@ Then the component itself is added to App.vue via RouterView.
 To prevent a complete page refresh on different components, then you will need to use RouterLink for any anchor links within the application.
 
 ## Compute
+
+Allows you to update a value that is based on another value, so if the value ever changes, it will update accordingly.
 
 ## Starting Notes
 
