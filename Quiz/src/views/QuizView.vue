@@ -1,5 +1,5 @@
 <script setup>
-import Questions from '../components/Questions.vue';
+import Questions from '../components/Question.vue';
 
 // const quiz = quiz.find(sub => sub.id === parseInt(route.params.id)).questions
 

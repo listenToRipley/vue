@@ -1,8 +1,5 @@
 <script setup>
-// import {useRoute, RouterView} from "vue-router";
 import quiz from "../../data/quiz.json"
-
-// const route = useRoute();
 
 const questions = quiz.find(sub => sub.id === parseInt(route.params.id)).questions
 
