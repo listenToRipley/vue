@@ -9,8 +9,18 @@
 </head>
 <body>
     <div id="shopping-list">
-        <h1>{{header}}</h1>
-        <input v-model="header">
+        <!-- <h1>{{header ? header.toLocaleUpperCase() : "Welcome"}}</h1> -->
+        <!-- shorthand -->
+        <h1>{{header || "Welcome"}}</h1> 
+        <!-- <input v-model="header"> -->
+
+        <ul>
+            <li 
+            v-for="(item, index) in items"
+            :key: item.id> 
+                {{index}}.{{item.label}} 
+            </li>
+        </ul>
     </div>
 
     <script src="https://unpkg.com/vue@3"></script>
@@ -19,7 +29,12 @@
             // templating synatx
             data() {
                 return {
-                    header: "Vue is ready to use!"
+                    header: "Vue is ready to use!",
+                    items: [
+                        { id: 1, label: "1 tooth bush"},
+                        { id: 1, label: "1 bag of chip - salt and vinegar"},
+                        { id: 1, label: "1 pint of sour"}
+                    ]
                 }
             }
 
