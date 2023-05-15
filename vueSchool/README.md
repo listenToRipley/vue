@@ -27,7 +27,7 @@ You can also use this to bind data from a series through creating an array and b
 [**v-on**](https://vuejs.org/api/built-in-directives.html#v-on)
  allow for event triggering.
 
- You can use a shorthand `@` to replace with v-on.
+ You can use a shorthand `@` to replace with v-on. You don't need the colon at this point either.
 
 #### Modifiers
 
@@ -39,6 +39,6 @@ There are key specific modifies that allow for us to target specific key events.
 
 Functions that are used inside of an application will be stored inside of `Vue.create({}` inside of a methods object.
 
-It's important to note that you won't have direct access to the data, you will need to bind the information by using `this`.
+It's important to note that you won't have direct access to the data, you will need to bind the information by using `this`. This also means you can't use arrow functions.
 
 When you reference the function, you will not be required to instantiate it.

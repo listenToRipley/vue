@@ -18,7 +18,7 @@
             v-model.trim="newItem"
             type="text" 
             placeholder="Add an item"
-            @:keyup.enter="saveItem"
+            @keyup.enter="saveItem"
         >
         <!-- <label> <input type="radio" v-model="newItemPriority" value="low">Low</label>
         <label> <input type="radio" v-model="newItemPriority" value="high">High</label> -->
@@ -44,7 +44,6 @@
         <button 
             class="btn btn-primary"
             v-on:click="items.push({id: items.length+11, label: newItem})"
-            key
             >
         Save item</button>
 
@@ -95,7 +94,8 @@
 
             methods: {
                 saveItem() {
-                    items.push({id: this.items.length+11, label: this.newItem})
+                    this.items.push({id: this.items.length+11, label: this.newItem})
+                    this.newItem = ''
                 }
             }
 
