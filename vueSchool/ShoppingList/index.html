@@ -14,6 +14,8 @@
         <h1>{{header || "Welcome"}}</h1> 
         <!-- <input v-model="header"> -->
 
+        <input type="text" placeholder="Add an item">
+
         <ul>
             <!-- what the object loop looks like: v-for="(key, index) in items", just uses key instead of index -->
             <li 
@@ -22,6 +24,8 @@
                 {{index}}.{{item.label}} 
             </li>
         </ul>
+
+
     </div>
 
     <script src="https://unpkg.com/vue@3"></script>
@@ -52,3 +56,4 @@
 
 </body>
 </html>
+<!-- push and pop can function within the console on the web. -->
