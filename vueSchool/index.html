@@ -15,6 +15,7 @@
         <!-- <input v-model="header"> -->
 
         <ul>
+            <!-- what the object loop looks like: v-for="(key, index) in items", just uses key instead of index -->
             <li 
             v-for="(item, index) in items"
             :key: item.id> 
@@ -30,11 +31,18 @@
             data() {
                 return {
                     header: "Vue is ready to use!",
+                    // array or 
                     items: [
                         { id: 1, label: "1 tooth bush"},
                         { id: 1, label: "1 bag of chip - salt and vinegar"},
                         { id: 1, label: "1 pint of sour"}
                     ]
+                    //object
+                    // items: {
+                    //     'item-1': { id: 1, label: "1 tooth bush"},
+                    //     'item-2': { id: 1, label: "1 bag of chip - salt and vinegar"},
+                    //     'item-3': { id: 1, label: "1 pint of sour"}
+                    // }
                 }
             }
 
