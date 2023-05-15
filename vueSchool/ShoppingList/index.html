@@ -14,7 +14,37 @@
         <h1>{{header || "Welcome"}}</h1> 
         <!-- <input v-model="header"> -->
 
-        <input type="text" placeholder="Add an item">
+        <input 
+            v-model.trim="newItem"
+            type="text" 
+            placeholder="Add an item"
+        >
+        <!-- <label> <input type="radio" v-model="newItemPriority" value="low">Low</label>
+        <label> <input type="radio" v-model="newItemPriority" value="high">High</label> -->
+
+        <br>
+
+        <!-- <label>
+            <select 
+                v-model="newItemPriority"
+                id="newItemPriority">
+                <option value="low">Low</option>
+                <option value="high">High</option>
+            </select>
+        </label> -->
+
+        <label>
+            High Priority
+            <input type="checkbox" v-model="highPriorityItem">
+        </label>
+
+        <br>
+        <p>{{newItem}} {{highPriorityItem}}</p>
+
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="vanilla">Vanilla</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="coffee">Coffee</label>
 
         <ul>
             <!-- what the object loop looks like: v-for="(key, index) in items", just uses key instead of index -->
@@ -35,7 +65,11 @@
             data() {
                 return {
                     header: "Vue is ready to use!",
-                    // array or 
+                    newItem: '',
+                    newItemPriority: 'low', 
+                    highPriorityItem: false,
+                    iceCreamFlavors: [],
+                     // array or 
                     items: [
                         { id: 1, label: "1 tooth bush"},
                         { id: 1, label: "1 bag of chip - salt and vinegar"},

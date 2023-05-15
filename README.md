@@ -57,11 +57,3 @@ While Vue documents look like HTML, you must place them inside a *template* tag 
 When will the next update be? - [Read this](https://thenewstack.io/vue-2023/)
 
 What is Vuex?
-
-## Extensions
-
-Recommended extensions for the tutorial:
-
--[Vue 3 Snippets](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets)
--[Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
--[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
