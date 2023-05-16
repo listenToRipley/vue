@@ -58,9 +58,12 @@
             <button 
                 class="btn btn-primary"
                 v-on:click="items.push({id: items.length+11, label: newItem})"
+                
                 >
             Save item</button>
         </div>
+
+        <a v-bind:href="newItem">Dynamic Link</a>
 
         <!-- <p>{{newItem}} {{highPriorityItem}}</p>
 
