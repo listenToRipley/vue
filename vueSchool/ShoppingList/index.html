@@ -13,8 +13,22 @@
         <!-- shorthand -->
         <h1>{{header || "Welcome"}}</h1> 
         <!-- <input v-model="header"> -->
+        <button 
+            v-if="editing" 
+            @click="doEdit(false)" 
+            class="btn btn-cancel">
+        Cancel</button>
 
-        <input 
+        <button 
+            v-else 
+            @click="doEdit(true)" 
+            class="btn btn-add">
+        Add Item</button>
+        <br>
+        <div
+        v-if="editing"
+        >
+            <input 
             v-model.trim="newItem"
             type="text" 
             placeholder="Add an item"
@@ -34,18 +48,19 @@
             </select>
         </label> -->
 
-        <label>
-            High Priority
-            <input type="checkbox" v-model="highPriorityItem">
-        </label>
+            <label>
+                High Priority
+                <input type="checkbox" v-model="highPriorityItem">
+            </label>
 
-        <br>
+            <br>
 
-        <button 
-            class="btn btn-primary"
-            v-on:click="items.push({id: items.length+11, label: newItem})"
-            >
-        Save item</button>
+            <button 
+                class="btn btn-primary"
+                v-on:click="items.push({id: items.length+11, label: newItem})"
+                >
+            Save item</button>
+        </div>
 
         <!-- <p>{{newItem}} {{highPriorityItem}}</p>
 
@@ -53,6 +68,8 @@
         <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
         <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
         <label><input type="checkbox" v-model="iceCreamFlavors" value="coffee">Coffee</label> -->
+
+        <p v-if="items.length === 0">Nice job! You bought everything!</p>
 
         <ul>
             <!-- what the object loop looks like: v-for="(key, index) in items", just uses key instead of index -->
@@ -73,6 +90,7 @@
             data() {
                 return {
                     header: "Vue is ready to use!",
+                    editing: true,
                     newItem: '',
                     newItemPriority: 'low', 
                     highPriorityItem: false,
@@ -94,8 +112,13 @@
 
             methods: {
                 saveItem() {
-                    this.items.push({id: this.items.length+11, label: this.newItem})
-                    this.newItem = ''
+                    this.items.push({id: this.items.length+11, label: this.newItem});
+                    this.newItem = '';
+                },
+
+                doEdit(editing) {
+                    this.editing = editing;
+                    this.newItem = '';
                 }
             }
 

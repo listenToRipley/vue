@@ -29,6 +29,10 @@ You can also use this to bind data from a series through creating an array and b
 
  You can use a shorthand `@` to replace with v-on. You don't need the colon at this point either.
 
+#### Conditional
+
+There is a `v-if`, which can toggle the existence of the element on the page.
+
 #### Modifiers
 
 These are additional actions that can be taken on a directives This is indicated by a period or colon between the directive and the modifier. Different v-items will have different actionable items.
