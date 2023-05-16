@@ -1,0 +1,13 @@
+.static-class {
+    list-style: none;
+}
+
+.priority {
+    color: red;
+    font-weight: 500;
+}
+
+.strikeout {
+    text-decoration: line-through;
+    color: grey;
+}
