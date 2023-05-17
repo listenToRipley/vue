@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Project 1</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Project 1</title>
     </head>
     <body>
+
+        <div id="app">
+            <h1>{{msg}}</h1>
+        </div>
+        
+        <script type="module">
+            import * as Vue from "vue/dist/vue.esm-bundler.js";
+
+            const app = Vue.createApp({
+
+                data() {
+                    return {
+                        msg: 'Hello World'
+                    }
+                }
+            })
+
+            app.mount('#app')
+        </script>
     </body>
 </html>
