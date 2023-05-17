@@ -6,7 +6,9 @@ const app = Vue.createApp({
     <h1>{{count}}</h1>
     <button v-on:click="increment">Increment</button>
 
-    <div v-for="number in evenList">
+    <div 
+        v-for="number in numbers"
+        v-bind:class="getClass(number)">
         <div>
             {{number}}
         </div> 
@@ -27,7 +29,12 @@ const app = Vue.createApp({
 
         isEven(number) {
             return number % 2 === 0;
+        },
+
+        getClass(number) {
+            return this.isEven(number) ? 'blue':'red';
         }
+
     },
 
     computed: {
