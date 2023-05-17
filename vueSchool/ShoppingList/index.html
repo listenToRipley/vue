@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Shopping List App</title>
+</head>
+<body>
+    <div id="shopping-list">
+        <!-- <h1>{{header ? header.toLocaleUpperCase() : "Welcome"}}</h1> -->
+        <!-- shorthand -->
+        <h1>{{header || "Welcome"}}</h1> 
+        <!-- <input v-model="header"> -->
+        <button 
+            v-if="editing" 
+            @click="doEdit(false)" 
+            class="btn btn-cancel">
+        Cancel</button>
+
+        <button 
+            v-else 
+            @click="doEdit(true)" 
+            class="btn btn-add">
+        Add Item</button>
+        <br>
+        <div
+        v-if="editing"
+        >
+            <input 
+            v-model.trim="newItem"
+            type="text" 
+            placeholder="Add an item"
+            @keyup.enter="saveItem"
+        > <span class="counter">{{charCount}}</span>
+        <!-- <label> <input type="radio" v-model="newItemPriority" value="low">Low</label>
+        <label> <input type="radio" v-model="newItemPriority" value="high">High</label> -->
+
+        <br>
+
+        <!-- <label>
+            <select 
+                v-model="newItemPriority"
+                id="newItemPriority">
+                <option value="low">Low</option>
+                <option value="high">High</option>
+            </select>
+        </label> -->
+
+            <label>
+                High Priority
+                <input type="checkbox" v-model="highPriorityItem">
+            </label>
+
+            <br>
+
+            <button 
+                class="btn btn-primary"
+                v-on:click="items.push({id: items.length+11, label: newItem})"
+                v-bind:disabled="newItem.length === 0"
+                >
+            Save item</button>
+        </div>
+
+        <!-- <a v-bind:href="newItem">Dynamic Link</a> -->
+
+        <!-- <p>{{newItem}} {{highPriorityItem}}</p>
+
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="vanilla">Vanilla</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="chocolate">Chocolate</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="strawberry">Strawberry</label>
+        <label><input type="checkbox" v-model="iceCreamFlavors" value="coffee">Coffee</label> -->
+
+        <p v-if="items.length === 0">Nice job! You bought everything!</p>
+
+        <ul>
+            <!-- what the object loop looks like: v-for="(key, index) in items", just uses key instead of index -->
+            <li 
+            v-for="(item, index) in reverseItems"
+            :key="item.id"
+            :class="{strikeout: item.purchased, priority: item.priority}"
+            class="static-class"
+            @click="togglePurchase(item)"
+            > 
+                {{index}}.) {{item.label}} 
+            </li>
+        </ul>
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        Vue.createApp({
+            // templating synatx
+            data() {
+                return {
+                    header: "Vue is ready to use!",
+                    editing: true,
+                    newItem: '',
+                    newItemPriority: 'low', 
+                    highPriorityItem: false,
+                    iceCreamFlavors: [],
+                     // array or 
+                    items: [
+                        { id: 1, label: "1 tooth bush", purchased: false,priority: true},
+                        { id: 1, label: "1 bag of chip - salt and vinegar", purchased: false, priority: true},
+                        { id: 1, label: "1 pint of sour", purchased: true, priority: false}
+                    ]
+                    //object
+                    // items: {
+                    //     'item-1': { id: 1, label: "1 tooth bush"},
+                    //     'item-2': { id: 1, label: "1 bag of chip - salt and vinegar"},
+                    //     'item-3': { id: 1, label: "1 pint of sour"}
+                    // }
+                }
+            },
+
+            computed: {
+                charCount() {
+                    return this.newItem.length;
+                },
+
+                reverseItems() {
+                    return [...this.items].reverse()
+                }
+            },
+
+            methods: {
+                saveItem() {
+                    this.items.push({
+                        id: this.items.length+11, 
+                        label: this.newItem,
+                        priority: this.highPriorityItem
+                    });
+                    this.newItem = '';
+                    this.highPriorityItem = false;
+                },
+
+                doEdit(editing) {
+                    this.editing = editing;
+                    this.newItem = '';
+                    this.highPriorityItem = false;
+                },
+                //don't need to use this on toggle since we as actually passing in the item.
+                togglePurchase(item) {
+                    item.purchased = !item.purchased;
+                }
+            }
+
+        })
+        .mount('#shopping-list')
+    </script>
+
+</body>
+</html>
+<!-- push and pop can function within the console on the web. -->
