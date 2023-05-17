@@ -4,6 +4,8 @@
 
 [O'Reilly Learning](https://learning.oreilly.com/videos/complete-vue-js-3/9781803245287/9781803245287-video1_1/)
 
+1. [Project 1][]
+
 [**Vue School**](./vueSchool/README.md)
 
 1. [Shopping List](./vueSchool/ShoppingList/index.html)
