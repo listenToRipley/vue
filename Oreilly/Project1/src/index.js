@@ -10,7 +10,9 @@ const app = Vue.createApp({
         v-bind:value="value"
         v-on:input="input"
     />
-    {{value}}
+    <div class='red'>
+        {{error}}
+    </div>
 
     <div 
         v-for="number in numbers"
@@ -52,6 +54,12 @@ const app = Vue.createApp({
     computed: {
         evenList() {
             return this.numbers.filter(num => this.isEven(num))
+        },
+
+        error() {
+            if(this.value.length < 5) {
+                return 'Must be greater than 5 characters.'
+            }
         }
     }
 })

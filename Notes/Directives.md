@@ -14,3 +14,5 @@ Examples:
 
 - [v-if / v-else](./Logic.md/#if)
 - [v-for](./Logic.md/#looping)
+- [v-bind](./Binding.md/#v-bind)
+- [v-model](./Binding.md/#v-model)
