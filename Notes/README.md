@@ -1,10 +1,12 @@
 # Notes
 
-This section is an effort to centralize the notes takens in the other sections. You might see repeated content.
+This section is an effort to centralize the notes takes in the other sections. You might see repeated content.
 
 ## Components
 
-Small element, accessible as long as they are imported into the related component
+Small element, or object with a number of options that are accessible as long as they are imported into the related documents.
+
+You always create components with lowercase characters, regardless of how these were previously stated.
 
 ## Table of Contents
 
