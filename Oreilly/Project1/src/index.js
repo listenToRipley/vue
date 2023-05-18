@@ -3,15 +3,20 @@ import * as Vue from "vue/dist/vue.esm-bundler.js";
 const Num = {
     props: ['number'],
     template: `
-    <div 
-        v-bind:class="getClass(number)">
+    <button 
+        v-bind:class="getClass(number)"
+        v-on:click="click">
         <div>
             {{number}}
         </div>
-    </div> 
+    </button> 
     `,
 
     methods: {
+
+        click() {
+            this.$emit('chosen', this.number)
+        },
 
         isEven(number) {
             return number % 2 === 0;
@@ -77,10 +82,20 @@ const app = Vue.createApp({
 
     {{check}}
 
+    <br>
+    
     <num  
         v-for="number in numbers"
         v-bind:number="number"
+        v-on:chosen="addNumber"
     />
+
+    <hr/>
+
+    <num  
+    v-for="number in numberHistory"
+    v-bind:number="number"
+/>
 
 
     </div>
@@ -92,7 +107,8 @@ const app = Vue.createApp({
             count: 0,
             numbers: [1,2,3,4,5,6,7,8,9,10],
             value:"a",
-            check:[]
+            check:[],
+            numberHistory:[]
         }
     },
 
@@ -103,6 +119,10 @@ const app = Vue.createApp({
 
         input($event) {
             this.value = $event.target.value;        
+        },
+
+        addNumber(number) {
+            this.numberHistory.push(number)
         }
 
     },

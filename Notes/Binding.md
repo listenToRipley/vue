@@ -48,3 +48,5 @@ You can also use this to bind data from a series by creating an array and bindin
 ## Emit
 
 Show backward binding from child to parent—a way to track state and provide information between elements.
+
+This will often use another directive, `v-on` which the provided emitter name back on the parent element to determine what you are working on.
