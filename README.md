@@ -5,7 +5,8 @@
 1. [Notes](./Notes/README.md)
 2. [O'Reilly Learning](https://learning.oreilly.com/videos/complete-vue-js-3/9781803245287/9781803245287-video1_1/)
 
-    - [Project 1](./Oreilly/Project1/README.md)
+    a. [Project 1](./Oreilly/Project1/README.md)
+    b. [Form Validation](./Oreilly/FormValidation/README.md)
 
 3. [**Vue School**](./vueSchool/README.md)
 
@@ -30,9 +31,3 @@ Allows you the break up your code, but even within the same file which allows yo
 Client Side Rendered application and Single Page Application.
 
 Rendering based on the provided JavaScript to be showing on the webpage - Client Side Render
-
-There is only one index.html passed in - Single Page Application.
-
-While Vue documents look like HTML, you must place them inside a *template* tag as the parent element. Template itself will not appear on the client side HTML.
-
-*Scope* attribute inside of your style within a specific Vue document will prevent your style from being used across Vue documents.
