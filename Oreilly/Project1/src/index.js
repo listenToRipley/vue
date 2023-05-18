@@ -7,12 +7,46 @@ const app = Vue.createApp({
     <button v-on:click="increment">Increment</button>
 
     <input 
-        v-bind:value="value"
+        type="text"
+        v-model="value"
         v-on:input="input"
     />
     <div class='red'>
         {{error}}
     </div>
+
+    <div class="radio-btn">
+        <input
+            type="radio"
+            v-model="value"
+            value="a"
+        />
+
+        <input
+        type="radio"
+        v-model="value"
+        value="b"
+    />
+    </div>
+
+    <div class="checkbox">
+        <input
+            type="checkbox"
+            v-model="check"
+            value="a"
+        />
+
+        <input
+        type="checkbox"
+        v-model="check"
+        value="b"
+        />
+    </div>
+
+    {{value}}
+    <br>
+
+    {{check}}
 
     <div 
         v-for="number in numbers"
@@ -28,7 +62,8 @@ const app = Vue.createApp({
         return {
             count: 0,
             numbers: [1,2,3,4,5,6,7,8,9,10],
-            value:"user"
+            value:"a",
+            check:[]
         }
     },
 
