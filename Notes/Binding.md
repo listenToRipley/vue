@@ -50,3 +50,9 @@ You can also use this to bind data from a series by creating an array and bindin
 Show backward binding from child to parent—a way to track state and provide information between elements.
 
 This will often use another directive, `v-on` which the provided emitter name back on the parent element to determine what you are working on.
+
+## Styling
+
+### Scoped
+
+If you us `scope` inside of a co-location application, this will make the styling exist inside only the application.
