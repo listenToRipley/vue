@@ -27,3 +27,7 @@ While Vue documents look like HTML, you must place them inside a *template* tag 
 Small element, or object with a number of options that are accessible as long as they are imported into the related documents.
 
 You always create components with lowercase characters, regardless of how these were previously stated.
+
+#### Co-location
+
+Where components are stored as vue files with `<template></template> <script></script> <style></style>`

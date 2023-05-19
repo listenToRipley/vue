@@ -1,6 +1,6 @@
 # O'Rielly Learning
 
-This course was taken through O'Reilly and the course name was Complete Vue.js 3 (Inc. Composition API, Vue Router, Vuex) created by Lachlan Miller, (thanks Lachlan).
+This course was taken through O'Reilly and the course name was Complete Vue.js 3 (Inc. Composition API, Vue Router, Vuex) created by Lachlan Miller, (thanks Lachlan), the starting [GitHub](https://github.com/jodobear/complete_vue3/tree/master)
 
 ## Tech
 
