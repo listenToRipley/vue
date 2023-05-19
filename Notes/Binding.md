@@ -4,7 +4,7 @@ You can use `:` before an attribute to bind it.
 
 ## v-bind
 
-`:` used before attributes to bind data to a specific variable.
+`:` used before attributes to bind data to a specific variable.  Using `:` omitting v-bind is the shorthand.
 
 ## Class Binding
 
