@@ -1,11 +1,13 @@
 <template>
-    <div class="lab">
+    <div class="label">
         <label :for="name">{{ name }}</label>
+        <div class="error">{{ error }}</div>
     </div>
 
     <input
         :id="name"
         type="text"
+        :value="value"
     />
 </template>
 
@@ -15,6 +17,26 @@ export default {
         name: {
             type: String,
             required: true
+        },
+        rules: {
+            // min: number,
+            // required: boolean,
+            type: Object,
+            default: {}
+        }
+    },
+
+    data() {
+        return {
+            value: ''
+        }
+    },
+
+    computed() {
+        error() {
+            if (this.rules.required &&  this.value.length === 0) {
+                return 'Value is required.'
+            }
         }
     }
 }
