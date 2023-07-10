@@ -4,6 +4,7 @@
     
     <my-input 
         name="Username"
+        :rules="{required: true, min: 5}"
     />
 
     <br>
@@ -28,7 +29,7 @@ export default {
 
     data() {
         return {
-            value: true
+            value: true,
     }
 }
 

@@ -7,7 +7,7 @@
     <input
         :id="name"
         type="text"
-        :value="value"
+        v-model="value"
     />
 </template>
 
@@ -32,13 +32,17 @@ export default {
         }
     },
 
-    computed() {
+    computed: {
         error() {
             if (this.rules.required &&  this.value.length === 0) {
                 return 'Value is required.'
             }
-        }
-    }
+
+            if (this.rules.min &&  this.value.length < this.rules.min) {
+                return `This min length is ${this.rules.min}.`
+            }
+        } 
+    },
 }
 </script>
 
