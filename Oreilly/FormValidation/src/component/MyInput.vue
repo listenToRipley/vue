@@ -6,7 +6,13 @@
 
     <input
         :id="name"
-        :value="value"
+        :value="value"        if (this.rules.required &&  this.value.length === 0) {
+                return 'Value is required.'
+            }
+
+            if (this.rules.min &&  this.value.length < this.rules.min) {
+                return `This min length is ${this.rules.min}.`
+            }
         @input="input"
     />
 </template>
@@ -36,11 +42,9 @@ export default {
                 name: this.name.toLowerCase(),
                 value: $event.target.value,
             })
-        }
-    },
+        },
 
-    computed: {
-        error() {
+        validate(value) {
             if (this.rules.required &&  this.value.length === 0) {
                 return 'Value is required.'
             }
@@ -48,8 +52,12 @@ export default {
             if (this.rules.min &&  this.value.length < this.rules.min) {
                 return `This min length is ${this.rules.min}.`
             }
-        } 
+        }
+
+        
     },
+
+
 }
 </script>
 
