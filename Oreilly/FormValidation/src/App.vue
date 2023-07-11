@@ -42,12 +42,12 @@ export default {
         return {
             value: true,
             username: {
-                value: 'user',
-                error: false,
+                value: '',
+                error: '',
             },
             password: {
-                value: 'pass',
-                error: false
+                value: '',
+                error: ''
             }
         }
     },
