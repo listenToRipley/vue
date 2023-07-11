@@ -4,7 +4,7 @@ This section is an effort to centralize the notes takes in the other sections. Y
 
 ## Table of Contents
 
-1. [State](State.md)
+1. [State](State.md) - lifecycle hooks.
 1. [Events](Events.md)
 1. [Directives](Directives.md)
 1. [Logic](Logic.md)

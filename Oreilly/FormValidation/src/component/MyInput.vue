@@ -6,13 +6,7 @@
 
     <input
         :id="name"
-        :value="value"        if (this.rules.required &&  this.value.length === 0) {
-                return 'Value is required.'
-            }
-
-            if (this.rules.min &&  this.value.length < this.rules.min) {
-                return `This min length is ${this.rules.min}.`
-            }
+        :value="value"        
         @input="input"
     />
 </template>
@@ -33,7 +27,19 @@ export default {
             // required: boolean,
             type: Object,
             default: {}
+        },
+        error: {
+            type: String,
+            
         }
+    },
+
+    created() {
+        this.$emit('update', {
+            name: this.name.toLowerCase(),
+            value: this.value,
+            error: this.validate(this.value)
+        })
     },
 
     methods: {
@@ -41,6 +47,7 @@ export default {
             this.emit('update', {
                 name: this.name.toLowerCase(),
                 value: $event.target.value,
+                error: this.validate($event.target.value)
             })
         },
 

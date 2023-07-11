@@ -6,6 +6,7 @@
         name="Username"
         :rules="{required: true, min: 5}"
         :value="username.value"
+        :error="username.error"
         @update="update"
     />
 
@@ -13,6 +14,7 @@
         name="Password"
         :rules="{required: true, min: 10}"
         :value="password.value"
+        :error="password.error"
         @update="update"
     />
 
@@ -41,18 +43,19 @@ export default {
             value: true,
             username: {
                 value: 'user',
-                valid: false,
+                error: false,
             },
             password: {
                 value: 'pass',
-                valid: false
+                error: false
             }
         }
     },
 
     methods: {
-        update({name, value}) {
+        update({name, value, error}) {
             this[name].value = value;
+            this[name].error = error;
         }
     }
 
