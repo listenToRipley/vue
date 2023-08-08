@@ -6,14 +6,20 @@
 
     <input
         :id="name"
-        :value="value"        
+        :value="value"
+        :type="type"        
         @input="input"
     />
 </template>
 
 <script>
 export default {
+    emits:['update'],
     props: {
+        type:{
+            type: String,
+            default: 'text'
+        },
         name: {
             type: String,
             required: true

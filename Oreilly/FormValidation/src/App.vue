@@ -2,7 +2,8 @@
     My App
     <hr>
     
-    <my-input 
+  <form @submit.prevent="submit">
+    <my-input
         name="Username"
         :rules="{required: true, min: 5}"
         :value="username.value"
@@ -10,11 +11,12 @@
         @update="update"
     />
 
-    <my-input 
+    <my-input
         name="Password"
         :rules="{required: true, min: 10}"
         :value="password.value"
         :error="password.error"
+        :type="password"
         @update="update"
     />
 
@@ -26,6 +28,7 @@
         :disabled="!value"
     />
 
+  </form>
 </template>
 
 <script>
@@ -40,7 +43,6 @@ export default {
 
     data() {
         return {
-            value: true,
             username: {
                 value: '',
                 error: '',
@@ -49,6 +51,15 @@ export default {
                 value: '',
                 error: ''
             }
+        }
+    },
+
+    computer: {
+        valid() {
+            return(
+                !this.username.error &&
+                !this.password.error
+            )
         }
     },
 

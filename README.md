@@ -6,6 +6,7 @@
 2. [O'Reilly Learning](https://learning.oreilly.com/videos/complete-vue-js-3/9781803245287/9781803245287-video1_1/)
 
     a. [Project 1](./Oreilly/Project1/README.md)
+
     b. [Form Validation](./Oreilly/FormValidation/README.md)
 
 3. [**Vue School**](./vueSchool/README.md)
